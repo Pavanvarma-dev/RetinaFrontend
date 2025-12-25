@@ -18,3 +18,21 @@ jobs:
           version: 22
       - name: installing dependies
         run: npm ci
+      - name: to check output
+        run: echo "hello good morning" | echo "good night"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download code into server
+        uses: actions/checkout@v3
+
+      - name: setting up nodejs
+        uses: actions/setup-node@v4
+        with:
+          version: 22
+      - name: installing dependies
+        run: npm ci
+      - name: building the app
+        run : npm build
+
