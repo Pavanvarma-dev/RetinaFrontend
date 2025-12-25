@@ -40,14 +40,14 @@ jobs:
       - name: installing dependies
         run: npm ci
 
+      - name: building the app
+        run : npm run build
+        
       - name: uploading Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
           path: dist
-
-      - name: building the app
-        run : npm run build
   deploy:
     needs: build
     
