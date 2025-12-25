@@ -5,6 +5,11 @@ on:
     types:
      -opened
      -closed
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - NewOne
  
 jobs:
   test:
