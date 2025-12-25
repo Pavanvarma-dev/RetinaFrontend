@@ -34,5 +34,5 @@ jobs:
       - name: installing dependies
         run: npm ci
       - name: building the app
-        run : npm build
+        run : npm run build
 
