@@ -66,7 +66,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
-        name: output content
+      - name: output content
         run: ls
       - name: deploying into server
         run: |
