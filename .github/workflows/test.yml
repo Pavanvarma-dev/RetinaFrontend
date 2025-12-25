@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: download code into server
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
       - name: setting up nodejs
-        uses: action/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           version: 22
       - name: installing dependies
