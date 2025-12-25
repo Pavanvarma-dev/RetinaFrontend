@@ -47,7 +47,7 @@ function Profile() {
                   <img 
                     src={`data:image/jpeg;base64,${profile.profilePicture}`}
                     alt="Profile Picture"
-                    style={{ width: '150px', height: '150px', borderRadius: '50%' }}
+                    style={{ width: '200px', height: '200px', borderRadius: '50%' }}
                   />
                   
                 )}
@@ -56,9 +56,7 @@ function Profile() {
                <div className='na'>
                    <h2>{profile.username}</h2>
                    <h4>{profile.bio}</h4>
-               
                    <button onClick={toedit}>Edit Profile</button>
-
                </div>
                   <div className='follo'>
                     <div>Followers

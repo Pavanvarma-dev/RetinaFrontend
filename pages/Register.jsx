@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import "./Register.css";
 import APi from "./Api"
 import {useAuth} from "./AuthContext"
+import GoogleSignup from './GoogleSignup';
 
 function Register() {
   const navigate = useNavigate();
@@ -76,6 +77,7 @@ function Register() {
           <input type="file" name="profilePicture" id="profilePicture" accept="image/*" onChange={(e) => setProfilePicture(e.target.files[0])} />
           <button type="submit">Register</button>
         </form>
+        <GoogleSignup />
       </div>
     </div>
   )

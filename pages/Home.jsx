@@ -43,28 +43,35 @@ const togoprofile = () => {
   return (
     <div className='cont'>
         <div className='randomposts-card'>
-         {posts.postwithImages && posts.postwithImages.map((post,key) => (
-           <div key={post.postID}>
-           <div className='profile'>
-               <img src ={`data:image/jpeg;base64,${post.user.profilePicture}`}
-              alt="Profile" style={{ width: '50px', height: '50px', borderRadius: '50%' }}
-              onClick={togoprofile}
-            /> 
-            <h3>{post.user.username}</h3>
-            <div className='follow'>
-                <FollowButton currentUserID={post.userID}  profileUserID={userID}/>
+            <div className='postsdata'>
+{posts.postwithImages && posts.postwithImages.map((post,key) => (
+  <div key={post.postID} className="post-card">
+    <div className='profile'>
+      <img
+        src ={`data:image/jpeg;base64,${post.user.profilePicture}`}
+        alt="Profile"
+        style={{ width: '50px', height: '50px', borderRadius: '50%' }}
+        onClick={togoprofile}
+      />
+      <h3>{post.user.username}</h3>
+      <div className='follow'>
+        <FollowButton currentUserID={userID} profileUserID={post.userID}/>
+      </div>
+    </div>
+
+    {post.postImage && (
+      <img className="post-image" src={`data:image/jpeg;base64,${post.postImage}`} alt="Post" />
+    )}
+
+    <p className="caption">{post.caption}</p>
+
+    <div className='desc'>
+      <Likes post={post} />
+      {/* <Comments post={post} /> */}
+    </div>
+  </div>
+))}
             </div>
-           </div>
-             {post.postImage && (
-               <img src={`data:image/jpeg;base64,${post.postImage}`} alt="Post" />
-             )}
-             <p>{post.caption}</p>
-           <div className='desc'>
-             <Likes post={post} />
-             {/* <Comments post={post} /> */}
-           </div>
-            </div>
-         ))}
         </div>
 
     </div>

@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Search from '../pages/Search'
 import Profile from '../pages/Profile'
 import Editprofile from '../pages/Editprofile'
+import {GoogleOAuthProvider} from "@react-oauth/google"
 import Register from '../pages/Register'
 import AddPosts from '../pages/AddPosts'
 import Login from '../pages/Login'
@@ -31,7 +32,13 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router ={router}/>
+  return(
+    <GoogleOAuthProvider clientId="488144531400-8kebe8ivigdc8g5j3fqmol669oukjka1.apps.googleusercontent.com">
+      <RouterProvider router={router}/>
+    </GoogleOAuthProvider>
+  )
 }
 
 export default App;
+
+

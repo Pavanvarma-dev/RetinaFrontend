@@ -1,48 +1,102 @@
-.cont{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top:20px;
-}
-.profile{
-    display: flex;
-    padding:5px;   
-    /* background-color: bisque; */
-    margin-top: 20px;
+/* page container centers the content */
+.cont {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  /* background: #f5f7fb; */
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.follow{
-    margin-left: 400px;
-    /* background-color: aqua; */
-    color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding:5px;
-    cursor: pointer;
-    border-radius: 5px
+/* card that holds the list of posts */
+.randomposts-card {
+  width: 840px;           /* adjust to taste */
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
 }
 
-.profile h3{
-    margin-left:20px;;
+/* stack posts vertically with gaps */
+.postsdata {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.profile img{
-    cursor: pointer;
+/* each post: 1px solid border, small radius and padding */
+.post-card {
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(16,24,40,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
 }
-.randomposts-card{
-    /* background-color: aqua; */
-    margin-top:10px;
-}
-.desc{
-    display: flex;
-    padding:5px;
-    justify-content: space-evenly;
-    width:100px;
-    cursor: pointer;
 
+/* header row: profile pic + user + follow button */
+.post-card .profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.randomposts-card p{
-    text-align: center;
-    font-weight:bolder
+
+/* profile image */
+.post-card .profile img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* username and caption container */
+.post-card .profile h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* follow button container aligns right */
+.post-card .follow {
+  margin-left: auto;
+}
+
+/* post image (if present) */
+.post-card img.post-image {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+/* caption text */
+.post-card .caption {
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 4px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* actions row: likes/comments */
+.post-card .desc {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 6px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 8px;
+}
+
+/* small responsive tweak */
+@media (max-width: 700px) {
+  .randomposts-card { width: 100%; }
+  .post-card { padding: 10px; }
+  .post-card .profile img { width: 40px; height: 40px; }
 }
