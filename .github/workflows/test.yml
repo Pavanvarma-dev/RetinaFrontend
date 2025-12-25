@@ -21,6 +21,7 @@ jobs:
       - name: to check output
         run: echo "hello good morning" | echo "good night"
   build:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
