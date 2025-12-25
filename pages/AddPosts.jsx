@@ -13,6 +13,8 @@ function AddPosts() {
   const {userID,token} = useAuth();
   const navigate = useNavigate();
 
+  // very importtant
+
   const toPost = async (e) => {
     e.preventDefault();
     if (!caption || !category) return;
