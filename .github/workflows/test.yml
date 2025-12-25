@@ -37,7 +37,7 @@ jobs:
   deploy:
     needs: build
     
-    runs-on: ububtu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: download code into server
