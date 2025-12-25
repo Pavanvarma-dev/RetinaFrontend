@@ -1,9 +1,9 @@
 name: Test Workflow
 
 on:
-  push:
-    braches: ["main"]
-
+  pull_request:
+    types: -opened
+ 
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,8 +18,6 @@ jobs:
           version: 22
       - name: installing dependies
         run: npm ci
-      - name: to check output
-        run: echo "hello good morning" | echo "good night"
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -36,4 +34,21 @@ jobs:
         run: npm ci
       - name: building the app
         run : npm run build
+  deploy:
+    needs: build
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download code into server
+        uses: actions/checkout@v3
+
+      - name: setting up nodejs
+        uses: actions/setup-node@v4
+        with:
+          version: 22
+      - name: deploying into server
+        run: |
+          echo "It is done"
+          echo "It is  not done"
 
