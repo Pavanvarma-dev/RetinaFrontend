@@ -61,6 +61,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           version: 22
+
+      - name: downloading Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+        name: output content
+        run: ls
       - name: deploying into server
         run: |
           echo "It is done"
