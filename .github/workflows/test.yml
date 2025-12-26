@@ -21,6 +21,8 @@ jobs:
           version: 22
       - name: installing dependies
         run: npm ci
+      - name: running test
+        run : npm test
   build:
     needs: test
     runs-on: ubuntu-latest
