@@ -1,0 +1,11 @@
+name: resuing the code
+on:
+  workflow_call
+
+jobs:
+  deploys:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: for checking the result
+        run: echo "This is reusing workflow"
