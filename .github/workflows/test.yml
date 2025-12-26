@@ -23,8 +23,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           version: 22
+
+      - name: Chaching the dependies
+        uses: actions/cache@v4
+        with: 
+          path: ~/.npm
+          key: depends-cach-modules ${{**/package-lock.json}}
       - name: installing dependies
         run: npm ci
+
+
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -48,6 +57,9 @@ jobs:
         with:
           name: dist-files
           path: dist
+
+
+
   deploy:
     needs: build
     
@@ -66,8 +78,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
+
       - name: output content
         run: ls
+        
       - name: deploying into server
         run: |
           echo "It is done"
