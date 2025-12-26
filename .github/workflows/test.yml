@@ -28,7 +28,7 @@ jobs:
         uses: actions/cache@v4
         with: 
           path: ~/.npm
-          key: depends-cach-modules ${{**/package-lock.json}}
+          key: depends-cach-modules ${{'**/package-lock.json'}}
       - name: installing dependies
         run: npm ci
 
@@ -46,6 +46,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           version: 22
+      - name: Chaching the dependies
+        uses: actions/cache@v4
+        with: 
+          path: ~/.npm
+          key: depends-cach-modules ${{'**/package-lock.json'}}
+
       - name: installing dependies
         run: npm ci
 
