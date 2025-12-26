@@ -35,8 +35,7 @@
     column-gap: 20px;
     font-size: 20px;
     margin-top: 80px;
-    /* background-color: orchid; */
-    font-weight: 600;
+        font-weight: 600;
 }
 .d{
     display: flex;
