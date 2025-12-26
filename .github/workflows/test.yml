@@ -51,7 +51,7 @@ jobs:
         with: 
           path: ~/.npm
           key: depends-cach-modules ${{'**/package-lock.json'}}
-        run: echo key
+      
 
       - name: installing dependies
         run: npm ci
