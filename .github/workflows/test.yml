@@ -61,7 +61,8 @@ jobs:
           echo "It is done"
           echo "It is  not done"
   excess:
-    need: [test, build]
+    need: |
+      - build
     if: failure()
     run: echo "It's working rey"
 
