@@ -61,8 +61,7 @@ jobs:
           echo "It is done"
           echo "It is  not done"
   excess:
-    needs: |
-      - build
+    needs: test
     if: failure()
     runs-on: ubuntu-latest
     steps:
