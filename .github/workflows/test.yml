@@ -37,7 +37,7 @@ jobs:
           - node-version: 24
             os: ubuntu-latest
         exclude:
-          - node-version: [18,19]
+          - node-version: 18
             os: windows-latest
     needs: test
     runs-on: ${{matrix.os}}
