@@ -63,6 +63,10 @@ jobs:
   excess:
     needs: |
       - build
+    runs-on: ubuntu-latest
+    steps: 
+
     if: failure()
+
     run: echo "It's working rey"
 
