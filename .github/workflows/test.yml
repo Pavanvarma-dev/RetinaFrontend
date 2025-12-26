@@ -18,7 +18,7 @@ jobs:
       - name: installing dependies
         run: npm ci
       - name: running test
-        continue-on-error: true
+        # continue-on-error: true
         id: run-test
         run : npm test
       - name: upload test
@@ -60,4 +60,8 @@ jobs:
         run: |
           echo "It is done"
           echo "It is  not done"
+  excess:
+    need: [test, build]
+    if: failure()
+    run: echo "It's working rey"
 
